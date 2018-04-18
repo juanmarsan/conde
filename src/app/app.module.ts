@@ -8,6 +8,7 @@ import {InfoComponent} from "./features/pagina-info/Pagina_info.Module";
 import {ContactoComponent} from "./features/pagina-contacto/Pagina_contacto.Module";
 import {ProductosComponent} from "./features/pagina-productos/Pagina_productos.Module";
 import {AsesoramientoComponent} from "./features/pagina-asesoramiento/Pagina_asesoramiento.Module";
+import {AppRoutingModule} from "./app.routes";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {AsesoramientoComponent} from "./features/pagina-asesoramiento/Pagina_ase
     ProductosComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
