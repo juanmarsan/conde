@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'info-directive',
-  templateUrl: './info.component.html',
-  styleUrls: ['info.component.scss']
+  templateUrl: './pagina-info.component.html',
+  styleUrls: ['pagina-info.component.scss']
 })
 export class InfoComponent {
   public title : string = 'Información';

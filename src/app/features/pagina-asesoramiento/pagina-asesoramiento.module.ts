@@ -1,9 +1,9 @@
 import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
+import {AsesoramientoComponent} from './pagina-asesoramiento.component';
 
 @NgModule({
   declarations:[AsesoramientoComponent],
-  imports: [BrowserModule],
-  bootstrap: [AsesoramientoComponent]
+  imports: [BrowserModule]
 })
-export class AsesoramientoComponent{}
+export class PaginaAsesoramientoModule{}

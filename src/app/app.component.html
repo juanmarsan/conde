@@ -1,1 +1,52 @@
+<div class="container">
+    <div class="logo col-xs-12 col-md-3">
+       <img src="./assets/img/logoConde2.png" alt="">
+    </div>
+
+    <div class="info content col-xs-12 col-md-9">
+        <div class="col-xs-12 col-md-12">
+             {{telefono}} | {{mail}}
+        </div>
+
+        <div class="col-xs-12 col-md-12">
+                <ul id="nav">
+                  <a href="javascript:void(0);" class="icon" (click)="switchBurger()">&#9776;</a>
+                  <li>
+                    <a *ngIf="isActiveBurger" [routerLink]=" ['./inicio'] " (click)="ConfigurationService.isPhone && switchBurger()"
+                       routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                      INICIO
+                    </a>
+                  </li>
+                  <li>
+                    <a *ngIf="isActiveBurger" [routerLink]=" ['./informacion'] "
+                       (click)="ConfigurationService.isPhone && switchBurger()"
+                       routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                      INFORMACIÓN
+                    </a>
+                  </li>
+                  <li>
+                    <a *ngIf="isActiveBurger" [routerLink]=" ['./productos'] "
+                       (click)="ConfigurationService.isPhone && switchBurger()"
+                       routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                      PRODUCTOS
+                    </a>
+                  </li>
+                  <li>
+                    <a *ngIf="isActiveBurger" [routerLink]=" ['./asesoramiento'] "
+                       (click)="ConfigurationService.isPhone && switchBurger()"
+                       routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                      ASESORAMIENTO
+                    </a>
+                  </li>
+                  <li>
+                    <a *ngIf="isActiveBurger" [routerLink]=" ['./contacto'] " (click)="ConfigurationService.isPhone && switchBurger()"
+                       routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                      CONTACTO
+                    </a>
+                  </li>
+                </ul>
+        </div>
+    </div>
+</div>
+
 <router-outlet></router-outlet>

@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'productos-directive',
-  templateUrl: './productos.component.html',
-  styleUrls: ['productos.component.scss']
+  templateUrl: './pagina-productos.component.html',
+  styleUrls: ['pagina-productos.component.scss']
 })
-export class InfoComponent {
+export class ProductosComponent {
   public title : string = 'Productos';
 
   public textoContacto : string = 'Puede contactar';
@@ -15,3 +15,5 @@ export class InfoComponent {
   }
 
 }
+
+
