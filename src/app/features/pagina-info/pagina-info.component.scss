@@ -1,0 +1,29 @@
+.site{
+  background: rgba(92,66,80,1);
+  background: -moz-linear-gradient(top, rgba(92,66,80,1) 7%, rgba(246,246,246,1) 68%, rgba(255,255,255,1) 70%, rgba(255,255,255,1) 72%);
+  background: -webkit-gradient(left top, left bottom, color-stop(7%, rgba(92,66,80,1)), color-stop(68%, rgba(246,246,246,1)), color-stop(70%, rgba(255,255,255,1)), color-stop(72%, rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(top, rgba(92,66,80,1) 7%, rgba(246,246,246,1) 68%, rgba(255,255,255,1) 70%, rgba(255,255,255,1) 72%);
+  background: -o-linear-gradient(top, rgba(92,66,80,1) 7%, rgba(246,246,246,1) 68%, rgba(255,255,255,1) 70%, rgba(255,255,255,1) 72%);
+  background: -ms-linear-gradient(top, rgba(92,66,80,1) 7%, rgba(246,246,246,1) 68%, rgba(255,255,255,1) 70%, rgba(255,255,255,1) 72%);
+  background: linear-gradient(to bottom, rgba(92,66,80,1) 7%, rgba(246,246,246,1) 68%, rgba(255,255,255,1) 70%, rgba(255,255,255,1) 72%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5c4250', endColorstr='#ffffff', GradientType=0 );
+  height: 90px;
+  color: white;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 70px;
+}
+
+
+.principal img{
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.pagina{
+  padding: 0 10% 30px 10%;
+}
+
+.secundaria img{
+  width: 100%;
+}

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'productos-directive',
+  selector: 'app-productos-directive',
   templateUrl: './pagina-productos.component.html',
   styleUrls: ['pagina-productos.component.scss']
 })

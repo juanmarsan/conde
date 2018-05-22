@@ -8,7 +8,7 @@ import {AsesoramientoComponent} from './features/pagina-asesoramiento/pagina-ase
 
 
 const ROUTES: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'inicio'},
+  { path: '', pathMatch: 'full', redirectTo: 'informacion'},
   { path: 'inicio', component: InicioComponent},
   { path: 'productos', component: ProductosComponent},
   { path: 'informacion', component: InfoComponent},

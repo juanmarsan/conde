@@ -3,6 +3,7 @@
   width: 100%;
   margin: auto;
   overflow: hidden;
+  margin-bottom: 50px;
 }
 
 .slider ul {
@@ -37,7 +38,7 @@
 }
 
 .pagina{
-  padding: 0 10% 0 10%;
+  padding: 0 10% 30px 10%;
   position: relative;
 }
 
@@ -52,17 +53,33 @@ h2{
 
 .foto{
   border-radius: 25%;
+  width: 25%;
 }
 
 .texto{
   letter-spacing:2px;
+  padding-top: 4%
 }
 
 .instalaciones, .equipo {
-  margin-top: 40px;
+  margin-top: 50px;
   h2 {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 
   }
 }
 
+.instalaciones{
+  margin-bottom: 30px;
+
+}
+
+.products h2 {
+    margin-bottom: 40px;
+
+  }
+.equipo .texto img{
+  position: absolute;
+  top: 150px;
+  left: 0px;
+}

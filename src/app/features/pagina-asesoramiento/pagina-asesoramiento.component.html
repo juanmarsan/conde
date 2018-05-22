@@ -1,6 +1,193 @@
 <div class="index" xmlns="http://www.w3.org/1999/html">
-{{title}}
-  <br>
+  <div class="site col-xs-12 col-md-12" >
+    {{title}}
+  </div>
 
-{{textoContacto}}
+  <div class="pagina col-xs-12 col-md-12" >
+    <div class="description col-xs-12 col-md-7" >
+      <h2>{{empresa}}</h2>
+      <h4>{{instalacionTitulo}}</h4>
+
+      <p>{{instalacionSubtexto}}</p>
+
+      <p>{{instalacionPaso1}}</p>
+      <ul id="nav">
+
+        <li>
+          {{instalacionPaso1P1}}
+        </li>
+        <li>
+          {{instalacionPaso1P2}}
+
+        <ul>
+        <li>
+          {{instalacionPaso1P3}}
+        </li>
+        <li>
+          {{instalacionPaso1P4}}
+        </li>
+        <li>
+          {{instalacionPaso1P5}}
+        </li>
+        <li>
+          {{instalacionPaso1P6}}
+        </li>
+        <li>
+          {{instalacionPaso1P7}}
+        </li></ul></li>
+      </ul>
+
+      <p>{{instalacionPaso2}}</p>
+      <ul id="nav">
+
+        <li>
+          {{instalacionPaso2P1}}
+        <ul>
+        <li>
+          {{instalacionPaso2P2}}
+      </li></ul></li>
+      </ul>
+      <p>{{instalacionPaso2post}}</p>
+
+
+      <p>{{instalacionPaso3}}</p>
+      <ul id="nav">
+
+        <li>
+          {{instalacionPaso3P1}}
+        </li>
+        <li>
+          {{instalacionPaso3P2}}
+        </li>
+        <li>
+          {{instalacionPaso3P3}}
+        </li>
+        <li>
+          {{instalacionPaso3P4}}
+        </li>
+      </ul>
+      <p>
+        {{instalacionPaso3P5}}
+      </p>
+      <ul>
+        <li>
+          {{instalacionPaso3P6}}
+        </li>
+      </ul>
+
+      <p>{{instalacionPaso4}}</p>
+      <ul id="nav">
+
+        <li>
+          {{instalacionPaso4P1}}
+        </li>
+        <li>
+          {{instalacionPaso4P2}}
+        </li>
+        <li>
+          {{instalacionPaso4P3}}
+        </li>
+        <li>
+          {{instalacionPaso4P4}}
+        </li>
+      </ul>
+
+
+      <p>{{asesoramiento}}</p>
+    </div>
+
+
+
+
+    <div class="imagenes col-xs-12 col-md-5" >
+      <div class="principal col-xs-12 col-md-12" >
+        <img src="./assets/img/asesoria/plantacion.png" alt="">
+      </div>
+      <div class="principal col-xs-12 col-md-12" >
+        <img src="./assets/img/asesoria/plantacion1.png" alt="">
+      </div>
+      <div class="principal col-xs-12 col-md-12" >
+        <img src="./assets/img/asesoria/tabla.png" alt="">
+      </div>
+      <div class="principal col-xs-12 col-md-12" >
+        <img src="./assets/img/asesoria/plantacion2.png" alt="">
+      </div>
+      <div class="principal col-xs-12 col-md-12" >
+      <img src="./assets/img/asesoria/plantacion3.png" alt="">
+    </div>
+
+      <section>
+        <h3>Z2 - (id=4) - column plain gallery layout (limit 3)</h3>
+        <br>
+        <ks-modal-gallery [id]="4" [modalImages]="images"
+                          [plainGalleryConfig]="plainGalleryColumn"></ks-modal-gallery>
+      </section>
+
+
+    </div>
+
+  <div class="pies col-xs-12 col-md-12" >
+
+    <h1>Galería de imágenes con efecto lightbox solo con CSS</h1>
+
+    <ul class="galeria principal">
+      <li><a href="./asesoramiento#img1"><img src="./assets/img/asesoria/plantacion.png"></a></li>
+      <li><a href="./asesoramiento#img2"><img src="./assets/img/asesoria/plantacion1.png"></a></li>
+      <li><a href="./asesoramiento#img3"><img src="./assets/img/asesoria/tabla.png"></a></li>
+      <li><a href="./asesoramiento#img4"><img src="./assets/img/asesoria/plantacion2.png"></a></li>
+      <li><a href="./asesoramiento#img5"><img src="./assets/img/asesoria/plantacion3.png"></a></li>
+    </ul>
+
+    <div class="modal" id="img1">
+      <h3>Paisaje 1</h3>
+      <div class="imagen">
+        <a href="./asesoramiento#img4">&#60;</a>
+        <a href="./asesoramiento#img2"><img src="./assets/img/asesoria/plantacion.png"></a>
+        <a href="./asesoramiento#img2">></a>
+      </div>
+      <a class="cerrar" href="./asesoramiento">X</a>
+    </div>
+
+    <div class="modal" id="img2">
+      <h3>Paisaje 2</h3>
+      <div class="imagen">
+        <a href="./asesoramiento#img1">&#60;</a>
+        <a href="./asesoramiento#img3"><img src="./assets/img/asesoria/plantacion1.png"></a>
+        <a href="./asesoramiento#img3">></a>
+      </div>
+      <a class="cerrar" href="">X</a>
+    </div>
+
+    <div class="modal" id="img3">
+      <h3>Paisaje 3</h3>
+      <div class="imagen">
+        <a href="./asesoramiento#img2">&#60;</a>
+        <a href="./asesoramiento#img4"><img src="./assets/img/asesoria/tabla.png"></a>
+        <a href="./asesoramiento#img4">></a>
+      </div>
+      <a class="cerrar" href="">X</a>
+    </div>
+
+    <div class="modal" id="img4">
+      <h3>Paisaje 4</h3>
+      <div class="imagen">
+        <a href="./asesoramiento#img3">&#60;</a>
+        <a href="./asesoramiento#img5"><img src="./assets/img/asesoria/plantacion2.png"></a>
+        <a href="./asesoramiento#img5">></a>
+      </div>
+      <a class="cerrar" href="">X</a>
+    </div>
+
+    <div class="modal" id="img5">
+      <h3>Paisaje 4</h3>
+      <div class="imagen">
+        <a href="./asesoramiento#img4">&#60;</a>
+        <a href="./asesoramiento#img1"><img src="./assets/img/asesoria/plantacion3.png"></a>
+        <a href="./asesoramiento#img1">></a>
+      </div>
+      <a class="cerrar" href="">X</a>
+    </div>
+  </div>
+  </div>
+
 </div>
