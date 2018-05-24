@@ -11,26 +11,28 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactoComponent implements OnInit {
   public title = 'Contacto';
+  public notas = 'En Viveros R. Gandia estamos a su disposición para cualquier consulta.';
+  public noted = 'Puede solicitar presupuesto o consulta para su plantación, variedad más adecuada, patrón más apropiado.';
+  public notes = 'Contacta con nosotros, realizamos presupuestos sin compromiso.';
 
   public contactoPeticionEnviado = false;
   public contacto: Contacto;
-
-  genderList: String[];
-  signupForm: FormGroup;
-
-
-
-
   myForm: FormGroup;
+  public lugar : string = 'Calle de la Sarga';
+  public poblacion : string = '46812 - Aielo de Malferit';
+  public telefono : string = '96 290 44 15';
+  public mail : string = 'viverosrafaelgandia@gmail.es';
+  public horario : string = ' L -V de 10:00 a 14:00';
 
 
   ngOnInit() {
     this.myForm = this.fb.group({
       name: ['', Validators.required],
-      age: ['', Validators.required]
+      email: ['', Validators.required],
+      telefono: ['', Validators.required],
+      movil: ['', Validators.required],
+      comment: ['', Validators.required]
     });
-
-
 
   }
 

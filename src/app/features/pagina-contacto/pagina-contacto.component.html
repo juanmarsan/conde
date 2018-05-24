@@ -1,4 +1,4 @@
-<div class="index" xmlns="http://www.w3.org/1999/html">
+<div class="index" xmlns="http://www.w3.org/1999/html" >
 
   <!--
   <form class="example-full-width" #myForm="ngForm" (ngSubmit)="sendForm(myForm.value)" *ngIf="! contactoPeticionEnviado">
@@ -28,17 +28,90 @@
 </div>
 
 -->
+  <div class="site col-xs-12 col-md-12" >
+    {{title}}
+  </div>
 
-  <form [formGroup]="myForm">
-    Naam: <input type="text" formControlName="name"><br>
-    Age: <input type="number" formControlName="age">
+  <div class="pagina col-xs-12 col-md-12" >
 
-    <button>Save</button>
-  </form>
+          <div class=" mats col-xs-12 col-md-6" >
+
+            <mat-card class="example-card info">
+              <mat-card-content>
+                <!--JUAN: esto crea un element material de tipo, llista -->
+                <mat-list>
+                  <h3 mat-subheader>Contactenos:</h3>
+                    <p>{{notas}}</p>
+                    <p> {{noted}}</p>
+                    <p>{{notes}}</p>
+
+                </mat-list>
+              </mat-card-content>
+            </mat-card>
 
 
 
 
+
+            <mat-card class="example-card info">
+            <mat-card-content>
+              <!--JUAN: esto crea un element material de tipo, llista -->
+              <mat-list>
+                <h3 mat-subheader>Información:</h3>
+                <mat-list-item>
+                  <mat-icon mat-list-icon>add_location</mat-icon>
+                  <h4 mat-line>{{lugar}}</h4>
+                  <p mat-line> {{poblacion}} </p>
+                </mat-list-item>
+                <mat-list-item>
+                  <mat-icon mat-list-icon>call</mat-icon>
+                  <h4 mat-line> <a href="tel:+34{{telefono}}"> {{telefono}}</a></h4>
+                </mat-list-item>
+                <mat-list-item>
+                  <mat-icon mat-list-icon>chat</mat-icon>
+                  <h4 mat-line>  <a  target="_blank" href="mailto:{{mail}}">{{mail}}</a></h4>
+                </mat-list-item>
+                <mat-list-item>
+                  <mat-icon mat-list-icon>query_builder</mat-icon>
+                  <h4 mat-line>{{horario}}</h4>
+                </mat-list-item>
+                <mat-list-item>
+                  <mat-icon mat-list-icon>near_me</mat-icon>
+                  <a target="_blank" jstcache="2" href="https://www.google.com/maps?ll=38.883,-0.5883903&z=15&t=m&hl=es-ES&gl=US&mapclient=embed&q=38%C2%B052%2747.224%22N+0%C2%B000%2735%18.205W@38.88623791865203,-0.5803920745427149" jsaction="mouseup:defaultCard.largerMap" class="google-maps-link">Ver en MAPS</a>
+                </mat-list-item>
+              </mat-list>
+            </mat-card-content>
+            </mat-card>
+
+
+
+          </div>
+          <div class="form-style-6 col-xs-12 col-md-6" >
+
+
+
+
+            <mat-card class="example-card info">
+              <mat-card-content>
+                <h1>Contacta con Nosotros</h1>
+                <form [formGroup]="myForm" (ngSubmit)="sendForm(myForm.value)">
+                  <input type="text" formControlName="name" placeholder="Nombre">
+                  <input type="text" formControlName="email" placeholder="Email" />
+                  <input type="text" formControlName="telefono" placeholder="Telefono" />
+                  <input type="text" formControlName="movil" placeholder="Movil" />
+                  <textarea formControlName="comment" placeholder="Escriba su Mensaje"></textarea>
+                  <button>Enviar</button>
+                </form>
+              </mat-card-content>
+            </mat-card>
+
+
+
+
+          </div>
+
+
+</div>
 
 
   <div *ngIf="contactoPeticionEnviado">
