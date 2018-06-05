@@ -1,5 +1,15 @@
 import {Component} from '@angular/core';
 
+
+
+
+
+
+
+
+
+
+
 @Component({
   selector: 'app-asesoramiento-directive',
   templateUrl: './pagina-asesoramiento.component.html',
@@ -61,7 +71,19 @@ export class AsesoramientoComponent {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
   constructor() {
+
   }
 
 }

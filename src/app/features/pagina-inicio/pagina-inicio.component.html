@@ -19,7 +19,7 @@
 
   <div class="pagina">
       <div class="products col-xs-12 col-md-12">
-        <h2>{{title}}</h2>
+          <h2 mat-line> <mat-icon mat-icon>control_camera</mat-icon> {{title}}</h2>
           <div class="productos" col-xs-12 col-md-12>
                 <div class="producto col-xs-12 col-md-3">
                   {{producto}}
@@ -41,17 +41,17 @@
       </div>
       <div class="nosotros" col-xs-12 col-md-12>
           <div class="equipo col-xs-12 col-md-12">
-            <h2>{{quien}}</h2>
-              <div class="texto col-xs-12 col-md-8">
+            <h2 mat-line> <mat-icon mat-icon>bubble_chart</mat-icon> {{quien}}</h2>
+              <div class="texto col-xs-12 col-md-9">
                 {{equipo}}
                 <img src="./assets/img/hojas.png" alt="" class="foto col-xs-12 col-md-4">
               </div>
-              <img src="./assets/img/trabajadores.png" alt="" class="foto col-xs-12 col-md-4">
+              <img src="./assets/img/trabajadores.png" alt="" class="foto col-xs-12 col-md-3">
           </div>
           <div class=" instalaciones col-xs-12 col-md-12">
-            <h2>{{insta}}</h2>
-            <img src="./assets/img/trabajadores.png" alt="" class="foto col-xs-12 col-md-4">
-            <div class="texto col-xs-12 col-md-8">
+            <h2 mat-line> <mat-icon mat-icon>nfc</mat-icon> {{insta}}</h2>
+            <img src="./assets/img/trabajadores.png" alt="" class="foto col-xs-12 col-md-3">
+            <div class="texto col-xs-12 col-md-9">
               {{instalaciones}}
             </div>
           </div>

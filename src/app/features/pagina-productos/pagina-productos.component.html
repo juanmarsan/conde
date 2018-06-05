@@ -1,6 +1,85 @@
 <div class="index" xmlns="http://www.w3.org/1999/html">
-{{title}}
-  <br>
+  <div class="site col-xs-12 col-md-12" >
+    {{title}}
+  </div>
+  <div class="pagina col-xs-12 col-md-12" >
+    <div class="productos col-xs-12 col-md-3">
+    <div id="wrapper">
+      <ul class="menu">
+        <li class="item1"><a href="#">Uva Blanca </a>
+          <ul>
+            <li class="subitem1"><a href="#">Cabernet </a></li>
+            <li class="subitem2"><a href="#">Chardonnay </a></li>
+            <li class="subitem3"><a href="#">Merlot </a></li>
+          </ul>
+        </li>
+        <li class="item2"><a href="#">Uva Tinta </a>
+          <ul>
+            <li class="subitem1"><a href="#">Cabernet </a></li>
+            <li class="subitem2"><a href="#">Chardonnay  </a></li>
+            <li class="subitem3"><a href="#">Merlot </a></li>
+          </ul>
+        </li>
+        <li class="item2"><a href="#">Uva Rosada </a>
+          <ul>
+            <li class="subitem1"><a href="#">Cabernet </a></li>
+            <li class="subitem2"><a href="#">Chardonnay  </a></li>
+            <li class="subitem3"><a href="#">Merlot </a></li>
+          </ul>
+        </li>
+        <li class="item4"><a href="#">Almendros </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-{{textoContacto}}
+
+    <div class="contenido col-xs-12 col-md-9">
+      <div class="nombre col-xs-12 col-md-8">
+        <h2>Nombre Producto</h2>
+      </div>
+      <div class="foto col-xs-12 col-md-4">
+
+        <img src="./assets/img/vino.png" alt="">
+      </div>
+      <div class="foto col-xs-12 col-md-12">
+        Explicación del Producto
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum scelerisque facilisis hendrerit. Cras consequat fermentum sem. Nunc nec risus semper, tempus tellus suscipit, ultrices ipsum. Etiam non enim a neque porta pulvinar. Suspendisse potenti. Sed varius, ex id elementum laoreet, leo urna rutrum enim, sed malesuada erat eros quis odio. Nulla ultricies rhoncus urna sed consequat. Etiam lorem ligula, varius nec elit quis, tempor tincidunt risus. Nulla imperdiet, nisi eget facilisis ornare, augue ex rutrum dui, non lacinia ante lacus ac tellus.
+
+        Praesent consectetur, justo sed finibus venenatis, magna massa lobortis ante, eget mollis dolor purus eget dui. Nunc ultricies metus nec elementum vulputate. Duis sit amet odio sit amet leo laoreet facilisis. Integer ac dolor ut est condimentum tempor. Duis mauris massa, euismod sed fermentum eu, iaculis et lectus. Cras commodo consectetur turpis, ac tempor dolor lobortis eget. Curabitur odio nibh, vulputate quis facilisis varius, consequat ac magna. Fusce sit amet cursus dui, sed gravida nisl. Vivamus vehicula odio non tortor feugiat, vitae porta dui placerat. Etiam sit amet ipsum at odio sagittis sodales. Nulla cursus tortor ut vulputate lobortis. Quisque rutrum mattis molestie.
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+    <div class=" empresas col-xs-12 col-md-12" *ngFor="let producto of productos" id="{{producto.id}}">
+      <div class="col-xs-12 col-md-3">
+        <img mat-card-image src="./assets/img/Empresas/{{producto.photo}}">
+      </div>
+
+      <div class="example-card col-xs-12 col-md-9">
+        <mat-card>
+          <mat-card-content>
+            <h1> {{producto.title}}</h1> <br>
+            <h3>{{producto.variedad}}</h3>
+            <br/>
+            {{producto.description}}
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+
+
+
+
+
+
+  </div>
+
 </div>

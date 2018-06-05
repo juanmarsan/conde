@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ProductosService} from '../../../core/domain/services/productosService';
 
 @Component({
   selector: 'app-productos-directive',
@@ -7,11 +8,19 @@ import { Component } from '@angular/core';
 })
 export class ProductosComponent {
   public title : string = 'Productos';
+  public productos: any;
 
   public textoContacto : string = 'Puede contactar';
 
 
-  constructor(){
+  constructor(private productosService: ProductosService) {
+
+
+    this.productosService.getProductos().subscribe(response => {
+      this.productos = response;
+      console.log(this.productos);
+    });
+
   }
 
 }

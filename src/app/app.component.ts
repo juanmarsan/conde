@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {ConfigurationService} from '../core/domain/services/configurationService';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,21 +7,26 @@ import {ConfigurationService} from '../core/domain/services/configurationService
 })
 export class AppComponent {
   title = 'app';
-  public isActiveBurger: boolean = true;
+  public isActiveBurger = true;
   public innerWidth: any;
-  public telefono : string = '96 290 44 15';
-  public mail : string = 'viverosrafaelgandia@gmail.es';
-
-  constructor(private ConfigurationService: ConfigurationService){
+  public telefono = '96 290 44 15';
+  public mail = 'viverosrafaelgandia@gmail.es';
+  constructor(private ConfigurationService: ConfigurationService) {
     this.innerWidth = window.innerWidth;
     this.ConfigurationService.isPhone = this.innerWidth < 400;
+
   }
 
 
-  switchBurger(){
+  switchBurger() {
     this.isActiveBurger = ! this.isActiveBurger;
   }
 }
+
+
+
+
+
 
 
 
