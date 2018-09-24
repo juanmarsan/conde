@@ -1,13 +1,8 @@
 <?php
-header('Access-Control-Allow-Origin: *'); 
-$con = mysql_connect("127.0.0.0", "root", ""); 
-	mysql_select_db("Conde", $con);
-	
-		$sql= "SELECT p.id, p.nombre, p.idvariedad, v.nombre as variedad, p.descripcion, p.foto FROM productos p INNER JOIN variedad v on p.idvariedad=v.id";
+header('Access-Control-Allow-Origin: *');
 
 
-		
-	
+
 	$res = mysql_query($sql, $con);
 
 	$vacio=true;
@@ -23,8 +18,6 @@ $con = mysql_connect("127.0.0.0", "root", "");
 			$vacio=false;
 		}
 
-	
-	
 
 	if($vacio==true){
 		$jsonarray[$i]['resultat'] = false;
@@ -32,5 +25,5 @@ $con = mysql_connect("127.0.0.0", "root", "");
 	}else{
 		echo json_encode($jsonarray);
 	}
-	
+
 ?>

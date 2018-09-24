@@ -13,20 +13,21 @@ import {Contacto} from '../models/contacto';
 @Injectable()
 export class ProductosService implements IProductosService {
   private misProductos: Producto[] =  [];
-  url = 'http://www.web-salva.com/juan/pruebas/verEmpresa.php';
-
-  urlPostContato: string = 'http://www.web-salva.com/juan/pruebas/sendContacto.php';
+  url = './core/PHP/verProductos.php';
+  urlPostContato = 'http://www.web-salva.com/juan/pruebas/sendContacto.php';
 
   constructor(private http: HttpClient) {}
 
-  getProductos(force?:boolean): Observable<Producto[]> {
-    if(this.misProductos.length > 0 || force)
+  getProductos(force?: boolean): Observable<Producto[]> {
+    if (this.misProductos.length > 0 || force) {
       return of(this.misProductos);
-    return this.http.get(this.url).map((response: any) => {
-      this.misProductos = response;
-      const apiResponse = <Producto[]>response;
-      return apiResponse;
-    });
+    } else {
+      return this.http.get(this.url).map((response: any) => {
+        this.misProductos = response;
+        const apiResponse = <Producto[]>response;
+        return apiResponse;
+      });
+    }
   }
 
 
