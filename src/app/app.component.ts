@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'app';
   public isActiveBurger = true;
   public innerWidth: any;
-  public telefono = '96 290 44 15';
+  public telefono = '686 94 23 15';
   public mail = 'viverosrafaelgandia@gmail.es';
   constructor(private ConfigurationService: ConfigurationService) {
     this.innerWidth = window.innerWidth;

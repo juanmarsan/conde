@@ -20,7 +20,7 @@ export class ContactoComponent implements OnInit {
   myForm: FormGroup;
   public lugar : string = 'Calle de la Sarga';
   public poblacion : string = '46812 - Aielo de Malferit';
-  public telefono : string = '96 290 44 15';
+  public telefono : string = '686 94 23 15';
   public mail : string = 'viverosrafaelgandia@gmail.es';
   public horario : string = ' L -V de 10:00 a 14:00';
 

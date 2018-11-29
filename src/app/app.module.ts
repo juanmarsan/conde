@@ -20,33 +20,7 @@ import {AsesoramientoComponent} from './features/pagina-asesoramiento/pagina-ase
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ProductosService} from '../core/domain/services/productosService';
-
-
-/*
-
-@NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    PaginaInicioModule,
-    PaginaProductosModule,
-    PaginaInfoModule,
-    PaginaContactoModule,
-    PaginaAsesoramientoModule,
-    BrowserAnimationsModule,
-    MaterialModule
-  ],
-  providers: [ConfigurationService],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-
-
-
-*/
+import {FiltrarVariedadPipe} from './shared/filtrar/filtrar-variedad.pipe';
 
 
 
@@ -57,7 +31,8 @@ export class AppModule { }
     ProductosComponent,
     InfoComponent,
     ContactoComponent,
-    AsesoramientoComponent
+    AsesoramientoComponent,
+    FiltrarVariedadPipe
   ],
   imports: [
     BrowserModule,

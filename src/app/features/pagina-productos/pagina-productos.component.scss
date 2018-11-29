@@ -18,7 +18,8 @@
   padding: 0 10% 30px 10%;
 }
 
-
+.contenido{
+  float: right;}
 
 
 a {
@@ -29,7 +30,10 @@ ul ul {
   margin: 0;
   padding: 0;
   list-style: none;
+
 }
+
+
 #wrapper {
   width: 220px;
   font-size: 0.8125em;
@@ -66,6 +70,16 @@ ul ul {
   text-shadow: 0px 1px 0px rgba(0,0,0,.5);
 }
 
+
+
+
+
+
+
+
+
+
+
 .menu ul li a {
   background: #fff;
   border-bottom: 1px solid #efeff0;
@@ -85,7 +99,9 @@ ul ul {
 }
 
 .menu > li > a:hover,
-.menu > li > a.active {
+.menu > li > a.active,
+.menu > li > ul > li > a:hover,
+.menu > li > ul > li > a.active {
   background-color: #35afe3;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(69, 199, 235)),to(rgb(38, 152, 219)));
   background-image: -webkit-linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219));
@@ -98,6 +114,7 @@ ul ul {
   -webkit-box-shadow: inset 0px 1px 0px 0px #6ad2ef;
   -moz-box-shadow: inset 0px 1px 0px 0px #6ad2ef;
   box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+  color: #fff;
 }
 .menu > li > a.active {
   border-bottom: 1px solid #1a638f;
@@ -131,11 +148,52 @@ ul ul {
 }
 
 
+
+
+
+
+.foto{
+  padding: 3%;
+  text-align: center;
+}
+
 .fotoim{
-  border-radius: 25%;
+  border-radius: 50%;
+padding: 3px;
+  width: 65%;
 }
 
 
+
+
+
+.contenido{
+  padding: 2%;
+}
+
+.title, .variedad {
+  display: inline;
+}
+
+.variedad{
+  float: right
+}
+.superItem{
+  margin-top: -15px;
+}
+
+.lista{
+  font-size: 13px;
+  margin-top: -22px;
+}
+
+
+
+
+
+
+
+////////////////////
 
 
 

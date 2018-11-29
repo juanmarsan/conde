@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductosService} from '../../../core/domain/services/productosService';
 import {Producto} from '../../../core/domain/models/producto';
-
+import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-productos-directive',
   templateUrl: './pagina-productos.component.html',
@@ -10,48 +10,99 @@ import {Producto} from '../../../core/domain/models/producto';
 
 export class ProductosComponent implements OnInit {
 
-  producto: Producto[] = [{
-    id: 1,
-    title: 'Cabernet',
-    idvariedad: '0',
-    variedad: 'Uva Blanca',
-    description: ' cabernet sauvignon es una de las uvas tintas más conocidas del mundo. Crece en casi todas las grandes zonas vitícolas, en un diverso espectro de climas, desde el valle del Okanagan (Canadá) al valle de la Becá (Líbano). La cabernet sauvignon se hizo famosa por su presencia en el vino de Burdeos, donde es mezclada a menudo con la merlot y con la cabernet franc. Desde Francia, la uva se ha extendido por Europa y por el Nuevo Mundo instalándose en las montañas Santa Cruz de California, el valle de Napa, la bahía Hawkes de Nueva Zelanda, el río Margaret y la región de Coonawarra de Australia, y los valles chilenos del Maipo y de Colchagua. Durante buena parte del siglo XX, fue la uva tinta de vino premium más plantada del mundo, hasta que fue adelantada por la merlot en los años 90.',
-    photo: 'cabernet.jpg'
-  },
-    {
-      id: 2,
-      title: 'Chardonnay',
-      idvariedad: '1',
-      variedad: 'Uva Negra',
-      description: ' Chardonnay NEGRO es una de las uvas tintas más conocidas del mundo. Crece en casi todas las grandes zonas vitícolas, en un diverso espectro de climas, desde el valle del Okanagan (Canadá) al valle de la Becá (Líbano). La cabernet sauvignon se hizo famosa por su presencia en el vino de Burdeos, donde es mezclada a menudo con la merlot y con la cabernet franc. Desde Francia, la uva se ha extendido por Europa y por el Nuevo Mundo instalándose en las montañas Santa Cruz de California, el valle de Napa, la bahía Hawkes de Nueva Zelanda, el río Margaret y la región de Coonawarra de Australia, y los valles chilenos del Maipo y de Colchagua. Durante buena parte del siglo XX, fue la uva tinta de vino premium más plantada del mundo, hasta que fue adelantada por la merlot en los años 90.',
-      photo: 'cabernet.jpg'
-    },
-    {
-      id: 2,
-      title: 'Merlot',
-      idvariedad: '1',
-      variedad: 'Uva Tinta',
-      description: ' Merlot NEGRO es una de las uvas tintas más conocidas del mundo. Crece en casi todas las grandes zonas vitícolas, en un diverso espectro de climas, desde el valle del Okanagan (Canadá) al valle de la Becá (Líbano). La cabernet sauvignon se hizo famosa por su presencia en el vino de Burdeos, donde es mezclada a menudo con la merlot y con la cabernet franc. Desde Francia, la uva se ha extendido por Europa y por el Nuevo Mundo instalándose en las montañas Santa Cruz de California, el valle de Napa, la bahía Hawkes de Nueva Zelanda, el río Margaret y la región de Coonawarra de Australia, y los valles chilenos del Maipo y de Colchagua. Durante buena parte del siglo XX, fue la uva tinta de vino premium más plantada del mundo, hasta que fue adelantada por la merlot en los años 90.',
-      photo: 'cabernet.jpg'
-    }
-  ];
 
-  public title : string = 'Productos';
+  public title = 'Productos';
   public productos: any;
-  menus: string[];
-  public textoContacto : string = 'Puede contactar';
+  public variedades: any;
 
-  constructor(private productosService: ProductosService) {
-    this.menus = ['Cabernet', 'Chardonnay' , 'Merlot'];
+  public ordenarTipo: any;
+  public variedadFilter: string;
+
+  public categoria = '';
+  public filtrado = 'Todos';
+  public pruebas = 'Mostrar';
+  mostrar = 'Mostrar';
+  ocultar = 'Ocultar';
+  public valor = 0;
+
+  showSubmenu = false;
+
+  public estilo = '\'background\':\'blue\'';
+
+
+  constructor(private productosService: ProductosService, private route: ActivatedRoute) {
+
+
+
+
+this.route.queryParams
+  .subscribe(params => {
+    if (+params['variedad']) {
+      this.variedadFilter =  String(+params['variedad']);
+    }
+  });
+
+
 
     this.productosService.getProductos().subscribe(response => {
       this.productos = response;
       console.log(this.productos);
     });
 
+    this.productosService.getVariedad().subscribe(response => {
+      this.variedades = response;
+      console.log(this.variedades);
+    });
+
   }
 
   ngOnInit() {
+  }
+
+
+  prueba() {
+    if (this.valor === 0) {
+      this.valor = 1;
+    } else {
+      this.valor = 0;
+    }
+  }
+
+  cambias(valor) {
+    console.log(valor.className);
+    if (valor.className == 'product') {
+      valor.className = 'product1';
+    } else {
+      valor.className = 'product';
+    }
+    console.log(valor.className);
+  }
+
+
+
+
+  cambia(valor) {
+    if (this.categoria !== valor) {
+      this.categoria = 'acierto' + valor;
+    }
+
+  }
+
+  /*cambia(valor) {
+    if (this.categoria !== valor) {
+      this.categoria = `clase${valor}`;
+      this.algo0 = 'visible';
+    }
+
+  }*/
+
+  filtra(valor) {
+    this.filtrado = valor;
+   this.cambia(valor);
+    }
+
+  filterName(event: any) {
+    this.ordenarTipo = event;
   }
 
 }

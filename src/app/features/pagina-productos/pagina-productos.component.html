@@ -2,50 +2,204 @@
   <div class="site col-xs-12 col-md-12" >
     {{title}}
   </div>
+  <!-- Esto es un comentario
   <div class="pagina col-xs-12 col-md-12" >
     <div class="productos col-xs-12 col-md-3">
     <div id="wrapper">
       <ul class="menu">
-        <li class="item1"><a href="#">Uva Blanca </a>
-          <ul >
-            <li class=""*ngFor="let menu of menus"><a href="#">{{menu}}</a></li>
-          </ul>
-        </li>
-        <li class="item2"><a href="#">Uva Tinta </a>
+        <li (click)="cambia()"><a>Uva Blanca </a>
           <ul>
-            <li class="subitem1"><a href="#">Cabernet </a></li>
-            <li class="subitem2"><a href="#">Chardonnay  </a></li>
-            <li class="subitem3"><a href="#">Merlot </a></li>
+            <li [class]="pruebaestilo" (click)="filtra(variedadBl.title)" *ngFor="let variedadBl of variedadBlanca" ><a >{{variedadBl.title}}</a></li>
           </ul>
         </li>
-        <li class="item2"><a href="#">Uva Rosada </a>
+        <li (click)="cambia1()"><a>Uva Tinta </a>
           <ul>
-            <li class="subitem1"><a href="#">Cabernet </a></li>
-            <li class="subitem2"><a href="#">Chardonnay  </a></li>
-            <li class="subitem3"><a href="#">Merlot </a></li>
+            <li [class]="pruebaestilo1" *ngFor="let variedadTin of variedadTinta" ><a >{{variedadTin.title}}</a></li>
           </ul>
         </li>
-        <li class="item4"><a href="#">Almendros </a>
+        <li class="item"><a href="#">Almendros </a>
         </li>
       </ul>
     </div>
   </div>
+    -->
 
 
-    <div class="contenido col-xs-12 col-md-9"  *ngFor="let product of producto">
+
+
+  <div class="pagina col-xs-12 col-md-12" >
+
+
+    <div class="productos col-xs-12 col-md-3">
+
+
+      <div id="wrapper">
+        <ul class="menu"  *ngFor="let tipo of variedades">
+          <li (click)="cambia(tipo.id)" id={{tipo.id}} class="nivel"><a class="nivel">{{tipo.nombre}}</a>
+            <ul *ngFor="let prodTipo of productos ">
+              <li  (click)="filtra(prodTipo.title)" *ngIf="prodTipo.variedad == tipo.nombre"  ><a >{{prodTipo.title}}</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+
+
+<div *ngFor="let tipo of variedades" class="menu col-xs-12 col-md-3">
+
+
+    <button mat-button [matMenuTriggerFor]="prueba" class="nivel">{{tipo.nombre}}</button>
+
+    <mat-menu #prueba="matMenu" >
+      <div *ngFor="let prodTipo of productos ">
+      <button mat-menu-item *ngIf="prodTipo.variedad == tipo.nombre"  (click)="filtra(prodTipo.title)">{{prodTipo.title}}</button>
+      </div>
+
+    </mat-menu>
+
+
+
+  </div>
+
+
+    <div class="productos col-xs-12 col-md-3">
+
+
+      <div id="wrapper">
+        <ul class="menu"  *ngFor="let tipo of variedades">
+          <li (click)="cambias(tipo.id)" id={{tipo.id}} class="nivel"><a class="nivel">{{tipo.nombre}}</a>
+            <ul *ngFor="let prodTipo of productos " class="product">
+              <li  (click)="filtra(prodTipo.title)" *ngIf="prodTipo.variedad == tipo.nombre"  ><a >{{prodTipo.title}}</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+
+
+
+
+    <!--
+        <div class="productos col-xs-12 col-md-3">
+          <div id="wrapper">
+            <ul class="menu" *ngFor="let tipo of variedades" >
+              <li (click)="cambia(tipo.id)" ><a>{{tipo.nombre}}</a>
+                <ul *ngFor="let prodTipo of productos" class="clase{{tipo.id}}">
+                  <li  (click)="filtra(prodTipo.title)" *ngIf="prodTipo.variedad == tipo.nombre"  ><a >{{prodTipo.title}}</a></li>
+                </ul>
+              </li>
+        </ul>
+          </div>
+        </div>
+
+
+    <!--
+        <div>
+          <mat-form-field>
+            <mat-select placeholder="Variedad" [(ngModel)]="variedadFilter" >
+              <mat-option *ngFor="let variedad of variedadBlanca" [value]="variedad.title " >
+                {{ variedad.title }}
+              </mat-option>
+              <mat-option>Todos</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+
+
+
+
+
+
+
+    Hasta aci
+
+        -->
+
+    <!-- Esto es un comentario
+    <div class="contenido col-xs-12 col-md-9"  *ngFor="let product of producto | FiltrarVariedadPipe: filtrado" id="{{product.id}}">
+
+
       <div class="nombre col-xs-12 col-md-8" >
-        <h2>{{product.title}}</h2>
-        <h5>{{product.variedad}}</h5>
+        <h2 class="title">{{product.title}}</h2><h5 class="variedad">{{product.variedad}}</h5>
+
+
+
+        <mat-list class="superItem">
+          <h3 mat-subheader>Caracteristicas:</h3>
+          <mat-list-item class="lista">
+            <mat-icon mat-list-icon>check mark</mat-icon>
+            <h4 mat-line>{{product.carac1}}</h4>
+          </mat-list-item>
+          <mat-list-item class="lista">
+            <mat-icon mat-list-icon>check mark</mat-icon>
+            <h4 mat-line>{{product.carac2}}</h4>
+          </mat-list-item>
+        </mat-list>
+
+        <mat-list class="superItem">
+          <h3 mat-subheader>Fenología:</h3>
+          <mat-list-item class="lista">
+            <mat-icon mat-list-icon>scatter_plot</mat-icon>
+            <h4 mat-line>{{product.desborre}}</h4>
+          </mat-list-item>
+          <mat-list-item class="lista">
+            <mat-icon mat-list-icon>scatter_plot</mat-icon>
+            <h4 mat-line>{{product.madura}}</h4>
+          </mat-list-item>
+        </mat-list>
+
       </div>
       <div class="foto col-xs-12 col-md-4">
-
         <img class="fotoim col-xs-12 col-md-12" src="./assets/img/{{product.photo}}">
       </div>
-      <div class="foto col-xs-12 col-md-12">
-       {{product.description}}
+
+
+    </div>
+    -->
+
+
+
+    <div class="contenido col-xs-12 col-md-9"  *ngFor="let prod of productos | FiltrarVariedadPipe: filtrado" id="{{prod.id}}">
+
+
+      <div class="nombre col-xs-12 col-md-8" >
+        <h2 class="title">{{prod.title}}</h2><h5 class="variedad">{{prod.variedad}}</h5>
+
+
+
+        <mat-list class="superItem">
+          <h3 mat-subheader>Caracteristicas:</h3>
+          <mat-list-item class="lista">
+            <mat-icon mat-list-icon>check mark</mat-icon>
+            <h4 mat-line>{{prod.carac1}}</h4>
+          </mat-list-item>
+          <mat-list-item class="lista">
+            <mat-icon mat-list-icon>check mark</mat-icon>
+            <h4 mat-line>{{prod.carac2}}</h4>
+          </mat-list-item>
+        </mat-list>
+
+        <mat-list class="superItem">
+          <h3 mat-subheader>Fenología:</h3>
+          <mat-list-item class="lista">
+            <mat-icon mat-list-icon>scatter_plot</mat-icon>
+            <h4 mat-line>{{prod.desborre}}</h4>
+          </mat-list-item>
+          <mat-list-item class="lista">
+            <mat-icon mat-list-icon>scatter_plot</mat-icon>
+            <h4 mat-line>{{prod.madura}}</h4>
+          </mat-list-item>
+        </mat-list>
 
       </div>
-
+      <div class="foto col-xs-12 col-md-4">
+        <img class="fotoim col-xs-12 col-md-12" alt="{{prod.photo}}" src="./assets/img/{{prod.photo}}">
+      </div>
 
 
     </div>
