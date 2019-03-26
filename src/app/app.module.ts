@@ -21,8 +21,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ProductosService} from '../core/domain/services/productosService';
 import {FiltrarVariedadPipe} from './shared/filtrar/filtrar-variedad.pipe';
-
-
+import {FiltrarSectorPipe} from './shared/filtrar/filtrar-sector.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +31,8 @@ import {FiltrarVariedadPipe} from './shared/filtrar/filtrar-variedad.pipe';
     InfoComponent,
     ContactoComponent,
     AsesoramientoComponent,
-    FiltrarVariedadPipe
+    FiltrarVariedadPipe,
+    FiltrarSectorPipe
   ],
   imports: [
     BrowserModule,
@@ -41,7 +41,7 @@ import {FiltrarVariedadPipe} from './shared/filtrar/filtrar-variedad.pipe';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
 
   ],
   providers: [ ConfigurationService, ProductosService],
