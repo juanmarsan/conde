@@ -35,8 +35,9 @@ export class ProductosComponent implements OnInit {
     });
 
   }
-
-
+  public variedadFilter;
+  public  productos;
+  public variedades;
   public title = 'Productos';
   public filtrado = 'Todos';
   public tipoVariedad = 'Todos';
@@ -59,7 +60,7 @@ export class ProductosComponent implements OnInit {
     if (this.selected === i) {
       if  (this.paso === false) {
         this.selected = -1;
-        alert('1');
+        this.cerrarVariedad();
       }
       this.paso = false;
     } else {
@@ -71,8 +72,10 @@ export class ProductosComponent implements OnInit {
   abrirVariedad(valor) {
     this.tipoVariedad = valor;
   }
-
-
+cerrarVariedad () {
+      this.filtrado = 'Todos';
+      this.tipoVariedad = 'Todos';
+}
 
 
 }
